@@ -96,22 +96,94 @@ namespace Assignment
 
             #region 6. Get the average price of each category's products.
 
-            var Result = ProductsList.GroupBy(P => P.Category)
-                .Select(C => new
-                {
+            //var Result = ProductsList.GroupBy(P => P.Category)
+            //    .Select(C => new
+            //    {
 
-                    Category = C.Key,
-                    AveragePrices = C.Average(P => P.UnitPrice)
+            //        Category = C.Key,
+            //        AveragePrices = C.Average(P => P.UnitPrice)
 
-                });
+            //    });
 
-            foreach (var item in Result)
-            {
-                Console.WriteLine($"Category: {item.Category}");
-                Console.WriteLine($"Average Prices : {item.AveragePrices}");
-            }
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine($"Category: {item.Category}");
+            //    Console.WriteLine($"Average Prices : {item.AveragePrices}");
+            //}
 
             #endregion
+
+            #endregion
+
+            #region Set Operators
+
+            #region 1. Find the unique Category names from Product List
+
+            //var Result = ProductsList.GroupBy(P => P.Category).Select(C => C.Key);
+
+            //foreach (var item in Result)
+            //    Console.WriteLine(item);
+
+            #endregion
+
+            #region 2. Produce a Sequence containing the unique first letter from both product and custome names.
+
+            //var Result01 = ProductsList.Select(P => P.ProductName[0]).Distinct();
+            //var Result02 = CustomersList.Select(C => C.CustomerName[0]).Distinct();
+
+            //var Result03 = Result01.Union(Result02);
+
+            //foreach (var item in Result03)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region 3. Create one sequence that contains the common first letter from both product and customer names.
+
+            //var Result01 = ProductsList.Select(P => P.ProductName[0]).Distinct();
+            //var Result02 = CustomersList.Select(C => C.CustomerName[0]).Distinct();
+
+            //var Result03 = Result01.Intersect(Result02);
+
+            //foreach (var item in Result03)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region 4. Create one sequence that contains the first letters of product names that are not also first letters of customer names.
+
+            //var Result01 = ProductsList.Select(P => P.ProductName[0]).Distinct();
+            //var Result02 = CustomersList.Select(C => C.CustomerName[0]).Distinct();
+
+            //var Result03 = Result01.Except(Result02);
+
+            //foreach (var item in Result03)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region 5. Create one sequence that contains the last Three Characters in each name of all customers and products, including any duplicates.
+
+            //var Result01 = ProductsList.Select(P => P.ProductName.TakeLast(3));
+            //var Result02 = CustomersList.Select(C => C.CustomerName.TakeLast(3));
+
+            //var Result03 = Result01.Concat(Result02);
+
+            //foreach (var item in Result03)
+            //{
+            //    Console.WriteLine();
+            //    foreach (var I in item)
+            //        Console.Write($"{I}  ");
+            //}
+
+            #endregion
+
 
             #endregion
 
