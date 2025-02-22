@@ -273,16 +273,16 @@ namespace Assignment
 
             #region 3. Return a grouped a list of products only for categories that have all of their products in stock.
 
-            var Result = ProductsList.GroupBy(P => P.Category)
-                .Where(C => C.All(P => P.UnitsInStock > 0));
+            //var Result = ProductsList.GroupBy(P => P.Category)
+            //    .Where(C => C.All(P => P.UnitsInStock > 0));
 
-            foreach (var item in Result)
-            {
-                Console.WriteLine(item.Key);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item.Key);
 
-                foreach (var I in item)
-                    Console.WriteLine($"\t{I}");
-            }
+            //    foreach (var I in item)
+            //        Console.WriteLine($"\t{I}");
+            //}
 
             #endregion
 
@@ -348,7 +348,6 @@ namespace Assignment
 
             //    Console.WriteLine("....");
             //}
-
 
             #endregion
 
