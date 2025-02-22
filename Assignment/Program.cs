@@ -1,4 +1,6 @@
-﻿using Assignment.Data;
+﻿using System.ComponentModel;
+using System.Data.SqlTypes;
+using Assignment.Data;
 using static Assignment.ListGenerator;
 
 
@@ -184,6 +186,105 @@ namespace Assignment
 
             #endregion
 
+
+            #endregion
+
+            #region Partitioning Operators
+
+            #region 1. Get the first 3 orders from customers in Washington
+
+            //var Result = CustomersList.Where(C => C.City == "Washington").SelectMany(C => C.Orders).Take(3);
+
+            //foreach (var item in Result)
+            //    Console.WriteLine(item);
+
+            #endregion
+
+            #region 2. Get all but the first 2 orders from customers in Washington.
+
+            //var Result = CustomersList.Where(C => C.City == "Washington").SelectMany(C => C.Orders).Skip(2);
+
+            //foreach (var item in Result)
+            //    Console.WriteLine(item);
+
+            #endregion
+
+            #region 3. Return elements starting from the beginning of the array until a number is hit that is less than its position in the array.
+
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //var Result = numbers.TakeWhile((N, I) => N > I);
+
+            //foreach (var item in Result)
+            //    Console.WriteLine(item);
+
+            #endregion
+
+            #region 4.Get the elements of the array starting from the first element divisible by 3.
+
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //var Result = numbers.SkipWhile(N => N % 3 != 0);
+
+            //foreach (var item in Result)
+            //    Console.WriteLine(item);
+
+            #endregion
+
+            #region 5. Get the elements of the array starting from the first element less than its position.
+
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            //var Result = numbers.SkipWhile( (N , I) => N >= I);
+
+            //foreach (var item in Result)
+            //    Console.WriteLine(item);
+
+            #endregion
+
+            #endregion
+
+            #region Quantifiers
+
+            #region 1. Determine if any of the words in dictionary_english.txt (Read dictionary_english.txt into Array of String First) contain the substring 'ei'.
+
+            //string[] Arr = "dictionary_english.txt".Split('_', '.');
+
+            //var Result = Arr.Any( S => S.Contains("ei"));
+
+            //Console.WriteLine(Result);
+
+            #endregion
+
+            #region 2. Return a grouped a list of products only for categories that have at least one product that is out of stock.
+
+            //var Result = ProductsList.GroupBy(P => P.Category)
+            //    .Where(C => C.Any(P => P.UnitsInStock == 0));
+
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item.Key);
+
+            //    foreach (var I in item)
+            //        Console.WriteLine($"\t{I}");
+            //}
+
+            #endregion
+
+            #region 3. Return a grouped a list of products only for categories that have all of their products in stock.
+
+            var Result = ProductsList.GroupBy(P => P.Category)
+                .Where(C => C.All(P => P.UnitsInStock > 0));
+
+            foreach (var item in Result)
+            {
+                Console.WriteLine(item.Key);
+
+                foreach (var I in item)
+                    Console.WriteLine($"\t{I}");
+            }
+
+            #endregion
 
             #endregion
 
