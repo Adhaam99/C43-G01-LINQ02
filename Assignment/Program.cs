@@ -288,6 +288,72 @@ namespace Assignment
 
             #endregion
 
+            #region Grouping Operators
+
+            #region 1. Use group by to partition a list of numbers by their remainder when divided by 5
+
+            //List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+
+            //var Result = numbers.GroupBy(N => N % 5)
+            //    .OrderBy(C => C.Key)
+            //    .Select(C => new
+            //    {
+            //        Reminder = C.Key,
+            //        Nums = C.OrderBy(number => number)
+            //    });
+
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine($"Numbers with a reminder of {item.Reminder} when divided by 5:");
+
+            //    foreach (var Num in item.Nums)
+            //        Console.WriteLine(Num);
+            //}
+
+            #endregion
+
+            #region 2. Uses group by to partition a list of words by their first letter. Use dictionary_english.txt for Input
+
+            //string[] Words = "dictionary_english.txt".Split('_', '.');
+
+            //var Result = Words.GroupBy(W => W[0])
+            //    .OrderBy(C => C.Key)
+            //    .Select(C => new
+            //    {
+            //        FirstLetter = C.Key,
+            //        Words = C.OrderBy(W => W)
+            //    });
+
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine($"First Letter ({item.FirstLetter}) :");
+
+            //    foreach (var Word in item.Words)
+            //        Console.WriteLine(Word);
+            //}
+
+            #endregion
+
+            #region Q3
+
+            //string[] Arr = { "from", "salt", "earn", "last", "near", "form" };
+
+            //var Result = Arr.GroupBy(W => W, new WordComparer())
+            //    .Select(C => C);
+
+            //foreach (var item in Result)
+            //{
+            //    foreach (var Word in item)
+            //        Console.WriteLine(Word);
+
+            //    Console.WriteLine("....");
+            //}
+
+
+            #endregion
+
+            #endregion
+
             #endregion
 
 
