@@ -18,9 +18,19 @@ namespace Assignment
 
             #region 1. Get the total units in stock for each product category.
 
-            //var Result = ProductsList.Count(P => P.UnitsInStock > 0);
+            //var Result = ProductsList.GroupBy(P => P.Category)
+            //    .Select(C => new
+            //    {
 
-            //Console.WriteLine(Result);
+            //        Category = C.Key,
+            //        UnitsInStock = C.Sum(P => P.UnitsInStock)
+
+            //    });
+
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine($"Category: {item.Category}, UnitsInStock : {item.UnitsInStock}");
+            //}
 
             #endregion
 
